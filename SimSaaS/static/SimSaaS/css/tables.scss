@@ -1,0 +1,410 @@
+@import "variables";
+
+#table1{
+	width: 100%;
+}
+#table2{
+	height: 140px;
+	width: 91.2%;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+#table1, #table2{
+	border: 1px solid $font-color;
+	-moz-border-radius:$border-radius;
+    -webkit-border-radius:$border-radius;
+    border-radius:$border-radius;
+}
+
+.headerRow{
+	background-color: $font-color;
+	height: 23px;
+}
+.tableHeader{
+	color: $background-color;
+	padding-left: 4px;
+	padding-right: 3px;
+	vertical-align: text-top;
+	//border-right: solid 1px #000;
+	float: left;
+	background-color: $font-color;
+	text-align:center;
+}
+
+.sortAsc, .sortDesc{
+  padding-right: 0px; 
+}
+
+.tableHeader.sortable:after{
+  display: inline-block;
+  width: 8px;
+  height: 16px;
+  margin: 0px 0px -3px 1px;
+  content: " ";
+  background: url('../images/SortArrow_Inactive.png') no-repeat 0 0;
+  background-size: contain;
+ }
+
+.tableHeader.sortable.sortAsc:after{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 0px 0px 1px;
+  content: " ";
+  background: url('../images/SortArrow_Up.png') no-repeat 0 0;
+  background-size: contain;
+}
+.tableHeader.sortable.sortDesc:after{
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0px 0px 0px 1px;
+  content: " ";
+  background: url('../images/SortArrow_Down.png') no-repeat 0 0;
+  background-size: contain;
+}
+
+#table1ContentScroller{
+	height: 247px;
+	overflow-y: scroll;
+	background-color: rgba(255, 255, 255, 0.05);
+}
+#headerRowWrapper{
+	padding-right: 8px;
+}
+
+.rowContainer{
+	border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.lapRow, .plotRow{
+	width: 100%;
+	height: 23px;
+}
+.evenRow{
+	background-color: rgba(255, 255, 255, 0.4);
+
+}
+.oddRow{
+	//background-color: rgba(255, 255, 255, 0.4);
+}
+.lapRow.movedRow{
+	background-color: $accent-color;
+}
+.cell{
+	display: inline-block;
+	text-align: center;
+	float: left;
+	border-right: 1px solid $font-color;
+	height: 100%
+}
+.cell.rightMost{
+	border-right: none;
+}
+
+// .setHeader, .plotHeader,.setCell, .plotCell{
+// 	width: 3.5%;
+// }
+// .lapTimeHeader, .lapTimeCell{
+// 	width: 10.1%;
+// }
+// .trackGripHeader,.trackGripCell{
+// 	width: 6.7%;
+// }
+// .wingPosHeader, .wingPosCell{
+// 	width: 11%;
+// }
+// .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
+// 	width: 6.7%;
+// }
+// .SSF_Header, .SSR_Header, .ARBF_Header, .ARBR_Header, .downloadHeader, .colorHeader, .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
+// 	width: 	8.8%
+// }
+// .deleteHeader, .deleteCell{
+// 	width: 7.8%;
+// }
+
+.setHeader, .plotHeader,.setCell, .plotCell{
+	width: 3.75%;
+}
+.lapTimeHeader, .lapTimeCell{
+	width: 10.81%;
+}
+.trackGripHeader,.trackGripCell{
+	width: 7.17%;
+}
+.wingPosHeader, .wingPosCell, .fuelLoadHeader, .fuelLoadCell{
+	width: 11.78%;
+}
+.RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
+	width: 7.17%;
+}
+.ARBF_Header, .ARBR_Header, .downloadHeader,.colorHeader, .ARBF_Cell, .ARBR_Cell, .downloadCell, .colorCell{
+	width: 	9.42%
+}
+.deleteHeader, .deleteCell{
+	width: 8.35%;
+}
+
+
+
+#table2{
+	// .removeHeader{
+	// 	width: 7.34%;
+	// }
+	// .lapTimeHeader{
+	// 	width: 11.07%;
+	// }
+	// .trackGripHeader{
+	// 	width: 7.35%;
+	// }
+	// .wingPosHeader{
+	// 	width: 12.06%;
+	// }
+	// .RHF_Header, .RHR_Header{
+	// 	width: 7.35%;
+	// }
+	// .SSF_Header, .SSR_Header, .ARBF_Header, .ARBR_Header, .downloadHeader{
+	// 	width: 	9.65%
+	// }
+	// .colorHeader{
+	// 	width: 8.55%;
+	// }
+
+	.removeHeader{
+		width: 8.18%;
+	}
+	.lapTimeHeader{
+		width: 11.80%;
+	}
+	.trackGripHeader{
+		width: 7.82%;
+	}
+	.wingPosHeader, fuelLoadHeader{
+		width: 12.85%;
+	}
+	.RHF_Header, .RHR_Header{
+		width: 7.82%;
+	}
+	.ARBF_Header, .ARBR_Header, .downloadHeader{
+		width: 	10.28%
+	}
+	.colorHeader{
+		width: 10.28%;
+	}
+}
+.plotRow{
+	// .removeCell{
+	// 	width: 7.34%;
+	// }
+	// .lapTimeCell{
+	// 	width: 11.07%;
+	// }
+	// .trackGripCell{
+	// 	width: 7.35%;
+	// }
+	// .wingPosCell{
+	// 	width: 12.06%;
+	// }
+	// .RHF_Cell, .RHR_Cell{
+	// 	width: 7.35%;
+	// }
+	// .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
+	// 	width: 	9.65%
+	// }
+	// .colorCell{
+	// 	width: 8.55%;
+	// }
+	.removeCell{
+		width: 8.18%;
+	}
+	.lapTimeCell{
+		width: 11.80%;
+	}
+	.trackGripCell{
+		width: 7.82%;
+	}
+	.wingPosCell, fuelLoadCell{
+		width: 12.85%;
+	}
+	.RHF_Cell, .RHR_Cell{
+		width: 7.82%;
+	}
+	.ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
+		width: 	10.28%
+	}
+	.colorCell{
+		width: 10.28%;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	#table1{
+		margin-top: 15px;
+	}
+	#table2{
+		width: 100%;
+	}
+	.setHeader, .setCell,.downloadHeader, .downloadCell{
+		display: none;
+	}	
+	// .plotHeader, .plotCell, .removeHeader, removeCell{
+	// 	width: 4% !important;
+	// }
+	// .lapTimeHeader, .lapTimeCell{
+	// 	width: 11.5% !important;
+	// }
+	// .trackGripHeader,.trackGripCell{
+	// 	width: 7.6% !important;
+	// }
+	// .wingPosHeader, .wingPosCell{
+	// 	width: 12.8% !important;
+	// }
+	// .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
+	// 	width: 7.6% !important;
+	// }
+	// .SSF_Header, .SSR_Header, .ARBF_Header, .ARBR_Header, .colorHeader, .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .colorCell{
+	// 	width: 	10% !important;
+	// }
+	// .deleteHeader, .deleteCell, .colorHeader, .colorCell{
+	// 	width: 8.9% !important;
+	// }
+	// .removeHeader,.removeCell{
+	// 	width: 4% !important;
+	// }
+	.plotHeader, .plotCell, .removeHeader, .removeCell{
+		width: 4.32% !important;
+	}
+	.lapTimeHeader, .lapTimeCell{
+		width: 12.45% !important;
+	}
+	.trackGripHeader,.trackGripCell{
+		width: 8.26% !important;
+	}
+	.wingPosHeader, .wingPosCell,.fuelLoadHeader, .fuelLoadCell{
+		width: 13.57% !important;
+	}
+	.RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
+		width: 8.76% !important;
+	}
+	.ARBF_Header, .ARBR_Header, .colorHeader, .ARBF_Cell, .ARBR_Cell, .colorCell{
+		width: 	10.85% !important;
+	}
+	.deleteHeader, .deleteCell, .colorHeader, .colorCell{
+		width: 8.60% !important;
+	}
+	// .removeHeader,.removeCell{
+	// 	width: 4.32% !important;
+	// }
+}
+
+
+
+
+.plotCell,.setCell,.downloadCell,.deleteCell, .removeCell{
+	
+	background-size: 20px 20px;
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+.plotCell{
+	background-image: url('../images/PlotIcon_Off.png');
+}
+.plotCell:hover{
+	background-image: url('../images/PlotIcon_Hover.png');
+}
+.plotCell.plotted{
+	background-image: url('../images/PlotIcon_On.png');
+}
+.plotCell.loading{
+	background-image: none;
+}
+.setCell{
+	background-image: url('../images/SetIcon_Off.png');
+}
+.setCell:hover{
+	background-image: url('../images/SetIcon_Hover.png');
+}
+.setCell:active{
+	background-image: url('../images/SetIcon_On.png');
+}
+
+.downloadCell{
+	background-image: url('../images/DownloadIcon_Off.png');
+}
+.downloadCell:hover{
+	background-image: url('../images/DownloadIcon_Hover.png');
+}
+.downloadCell:active{
+	background-image: url('../images/DownloadIcon_On.png');
+}
+
+.deleteCell{
+	background-image: url('../images/TrashIcon_Off.png');
+}
+.deleteCell:hover{
+	background-image: url('../images/TrashIcon_Hover.png');
+}
+.deleteCell:active{
+	background-image: url('../images/TrashIcon_On.png');
+}
+.deleteCell.loading{
+	background-image: none;
+}
+
+.colorSample{
+	width: 35px;
+	height: 10px;
+	
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 5px;
+}
+
+#row1 > .colorCell > .colorSample{
+	background-color: $accent-color;
+}
+
+#row2 .colorCell .colorSample{
+	background-color: #FF4826;
+}
+#row3 .colorCell .colorSample{
+	background-color: #FFB400;
+}
+#row4 .colorCell .colorSample{
+	background-color: #00FE56 ;
+}
+#row5 .colorCell .colorSample{
+	background-color: #FF8300;
+}
+
+.progressBG{
+	width: 55px;
+	background-color: #FFF;
+	height: 6px;
+	float: none;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 9px;
+	
+}
+
+.progressVal{
+	height: 100%;
+	float: left;
+	background-color:$accent-color;
+	box-shadow: 0 0 5px #08c1fe;
+
+	width: 0%;
+
+}
+
+.removeCell:hover{
+	background-image: url('../images/PlotIcon_Off.png');
+}
+.removeCell{
+	background-image: url('../images/PlotIcon_On.png');
+}
+
+
+

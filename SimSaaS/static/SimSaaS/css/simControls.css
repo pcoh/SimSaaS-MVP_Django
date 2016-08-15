@@ -1,0 +1,58 @@
+#divSimControlContainer .selectContain, .bufferRow {
+  height: 44px; }
+
+.componentCaption {
+  padding-left: 0px;
+  padding-right: 3px;
+  padding-top: 4px; }
+
+.setupSelector {
+  width: 100%; }
+
+.selectContain, .columnCaption, .buttonContain {
+  padding-left: 0px;
+  padding-right: 0px; }
+
+button {
+  width: 100%; }
+
+.ui-state-focus {
+  outline: none; }
+
+#simButton {
+  background-color: #343434;
+  color: #08c1fe;
+  border: 3px solid #08c1fe;
+  font-weight: bold; }
+
+#simButton:hover {
+  background-color: #08c1fe;
+  color: #FFF; }
+
+.ui-menu-item.ui-state-focus {
+  background-color: #08c1fe; }
+
+@media (max-width: 767px) {
+  #divSimControlContainer .row {
+    padding-left: 15px;
+    padding-right: 15px; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  #divSimControlContainer .row {
+    padding-left: 15px;
+    padding-right: 15px; } }
+@media (min-width: 992px) and (max-width: 1199px) {
+  #divSimControlContainer .row {
+    padding-left: 15px;
+    padding-right: 15px; } }
+@media (min-width: 1200px) {
+  #divSimControlContainer .row {
+    padding-left: 15px;
+    padding-right: 15px; }
+
+  .selectContain.left, .columnCaption.left {
+    padding-right: 7px; }
+
+  .selectContain.right, .columnCaption.right, .buttonContain {
+    padding-left: 7px; } }
+
+/*# sourceMappingURL=simControls.css.map */

@@ -1,0 +1,73 @@
+@import "variables";
+
+#divSimControlContainer .selectContain, .bufferRow{
+	height: 44px;
+}
+
+.componentCaption{
+	padding-left: 0px;
+	padding-right: 3px;
+	padding-top: 4px;
+}
+.setupSelector{
+	width: 100%;
+}
+
+.selectContain, .columnCaption, .buttonContain{
+	padding-left: 0px;
+	padding-right: 0px;
+}
+button{
+	width: 100%;	
+}
+
+.ui-state-focus {
+	//outline-color:$accent-color;
+	outline: none;
+}
+#simButton{
+	background-color: $background-color;
+	color: $accent-color;
+	border: 3px solid $accent-color;
+	font-weight: bold;
+}
+#simButton:hover{
+	background-color: $accent-color;
+	color: #FFF;
+}
+
+.ui-menu-item.ui-state-focus{
+	background-color: $accent-color;
+}
+
+@media (max-width: 767px) { //xs
+  	#divSimControlContainer .row{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media (min-width: 768px) and (max-width: 991px) {//sm
+  	#divSimControlContainer .row{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+@media (min-width: 992px) and (max-width: 1199px) {//md
+	#divSimControlContainer .row{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+  
+}
+@media (min-width: 1200px) {//lg
+	#divSimControlContainer .row{
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+	.selectContain.left, .columnCaption.left{
+		padding-right: 7px;
+	}
+	.selectContain.right, .columnCaption.right, .buttonContain{
+		padding-left: 7px;
+	}	
+}
