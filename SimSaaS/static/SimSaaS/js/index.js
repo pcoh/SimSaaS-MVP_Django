@@ -337,7 +337,7 @@ function fillTable1(sortedLapIDs){
         var lapHTML = "<div id=\"lapRow"+currLapID+ "\" class=\"lapRow " +rowType + "\"><span class=\"cell setCell\"></span><span id=\"plotCell"+currLapID+ "\" class=\"cell plotCell loading\"></span><span class=\"cell lapTimeCell\"><div class=\"progressBG\"><div class=\"progressVal\" id=\"progress"+currLapID+"\"></div></div></span>"+
                       "<span class=\"cell trackGripCell\">"+simData[currEvent].table1Object[currLapID].demTrackGrip+"%</span><span class=\"cell wingPosCell\">"+simData[currEvent].table1Object[currLapID].demWingPos+"deg</span></span><span class=\"cell fuelLoadCell\">"+simData[currEvent].table1Object[currLapID].demFuelLoad+"kg</span><span class=\"cell RHF_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_F+"mm</span><span class=\"cell RHR_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_R+"mm</span>" +
                       "<span class=\"cell ARBF_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_F+"N/mm</span><span class=\"cell ARBR_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_R+"N/mm</span>" +
-                      "<span class=\"cell downloadCell\"></span><span class=\"cell deleteCell loading rightMost\"></span></div>";
+                      "<span class=\"cell downloadCell loading\"></span><span class=\"cell deleteCell loading rightMost\"></span></div>";
 
         $("#rowContainer1").append(lapHTML); 
 
@@ -346,6 +346,7 @@ function fillTable1(sortedLapIDs){
           $("#lapRow"+currLapID).children(".plotCell").removeClass("loading").on('click',  clickPlotButton);
           $("#lapRow"+currLapID).children(".deleteCell").removeClass("loading").on('click',  clickDeleteButton);
           $("#lapRow"+currLapID).children(".setCell").on('click',  clickSetButton);
+          $("#lapRow"+currLapID).children(".downloadCell").removeClass("loading").on('click', clickDownloadButton);
         }
         if(simData[currEvent].table1Object[currLapID].plotted == true){
           $("#plotCell"+currLapID).addClass('plotted');
@@ -389,7 +390,7 @@ function fillTable2(){
 }
 
 calcProgress = function(lapID){
-  var simDur = 60000;
+  var simDur = 1000;
   var endTime = $.now()+simDur; 
   updateProgress(endTime,simDur,lapID);
 }
@@ -403,9 +404,10 @@ function updateProgress(endTime,simDur,lapID) {
       updateProgress(endTime,simDur,lapID);
   }, 3000);
   }else{
-    $("#lapRow"+lapID).children(".plotCell").removeClass("loading").on('click',  clickPlotButton);
-    $("#lapRow"+lapID).children(".deleteCell").removeClass("loading").on('click',  clickDeleteButton);
+    // $("#lapRow"+lapID).children(".plotCell").removeClass("loading").on('click',  clickPlotButton);
+    // $("#lapRow"+lapID).children(".deleteCell").removeClass("loading").on('click',  clickDeleteButton);
     $("#lapRow"+lapID).children(".setCell").on('click',  clickSetButton);
+    
 
     // var currLT = simData[currEvent].lapData[lapID-1].FIELD1[simData[currEvent].lapData[lapID-1].FIELD1.length-1];
     var currLT = simData[currEvent].lapData[lapID-1]["Time [s]"][simData[currEvent].lapData[lapID-1]["Time [s]"].length-1];
@@ -541,6 +543,33 @@ function clickRemoveButton(){
   var lapID = parseInt($(this).parent().attr("id").replace("lapRow",""));
   
   $("#plotCell"+lapID).click();
+}
+function clickDownloadButton(){
+  var lapID = parseInt($(this).parent().attr("id").replace("lapRow",""))
+  var dlData = simData[currEvent].lapData[lapID-1];
+
+  var header = []
+  for (var i=0; i<Object.keys(dlData).length; i++){
+    header[i] = Object.keys(dlData)[i];
+  }
+  var header = ["\""+header.join("\",\"")+"\"\n"];
+  var data = [header];
+  
+  for (var i=0;i<dlData[Object.keys(dlData)[0]].length; i++){
+    dataRow =[];
+    for (var j=0; j<Object.keys(dlData).length; j++){
+      dataRow[j] = dlData[Object.keys(dlData)[j]][i];
+    }
+    dataRow = ["\""+dataRow.join("\",\"")+"\"\n"];
+    data.push(dataRow);
+  }
+
+  
+  var suggestName = "SimResults_"+eventList[currEvent-1]+".csv";
+
+  // var file = new File( data, suggestName, {type: "text/plain;charset=utf-8"});
+  var file = new File( data, suggestName, {type: "text/csv;charset=windows-1252;"});
+  saveAs(file);
 }
 
 

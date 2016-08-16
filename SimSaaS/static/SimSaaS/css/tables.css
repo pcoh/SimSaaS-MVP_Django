@@ -202,6 +202,9 @@
 .downloadCell:active {
   background-image: url("../images/DownloadIcon_On.png"); }
 
+.downloadCell.loading {
+  background-image: none; }
+
 .deleteCell {
   background-image: url("../images/TrashIcon_Off.png"); }
 
