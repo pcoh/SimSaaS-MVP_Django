@@ -178,11 +178,11 @@
 .plotCell:hover {
   background-image: url("../images/PlotIcon_Hover.png"); }
 
-.plotCell.plotted {
-  background-image: url("../images/PlotIcon_On.png"); }
-
-.plotCell.loading {
+.plotCell.loading, .plotCell.plotFull {
   background-image: none; }
+
+.plotCell.plotted {
+  background-image: url("../images/PlotIcon_On.png") !important; }
 
 .setCell {
   background-image: url("../images/SetIcon_Off.png"); }

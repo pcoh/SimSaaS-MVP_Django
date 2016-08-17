@@ -1,28 +1,42 @@
-function clickPlotButton(){
+function clickPlotButton(){	
 	
 	$targetCell = $(this);
 	lapID = getPlotLapID($targetCell);
 
-	if ($(this).hasClass("plotCell")){
-		$(this).toggleClass('plotted');
-	}else if ($(this).hasClass("removeCell")){
-		$("#plotCell"+lapID).toggleClass('plotted');
-	}
+	// if ($(this).hasClass("plotCell")){
+	// 	$(this).toggleClass('plotted');
+	// }else if ($(this).hasClass("removeCell")){
+	// $("#plotCell"+lapID).toggleClass('plotted');
+	// }
+
+	// if ($(this).hasClass("plotted")){
+
 	if(simData[currEvent].table1Object[lapID].plotted){
 		simData[currEvent].table1Object[lapID].plotted = false;
+		$("#plotCell"+lapID).removeClass('plotted');
 	}else{
-		simData[currEvent].table1Object[lapID].plotted = true;
-		ga('send', {
-		    hitType: 'event',
-		    eventCategory: 'Analysis',
-		    eventAction: 'Plot Lap',
-		    eventLabel: ''
-		  });
+		if (toBePlotted.length <5){
+			simData[currEvent].table1Object[lapID].plotted = true;
+			$(this).addClass('plotted');
+			ga('send', {
+			    hitType: 'event',
+			    eventCategory: 'Analysis',
+			    eventAction: 'Plot Lap',
+			    eventLabel: ''
+			  });
+		}
 	}
 
 	getLapsToBePlotted(); 
 	fillTable2(); 
-	plotData();	
+	plotData();
+
+	// }
+	if (toBePlotted.length >=5){
+        $(".plotCell").addClass("plotFull");
+      }else{
+        $(".plotCell").removeClass("plotFull");
+      }
 }
 
 function getLapsToBePlotted(){
