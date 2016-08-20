@@ -56,6 +56,11 @@ $('#simButton').on('click',  function() {
     eventAction: 'simulate',
     eventLabel: ''
   });
+  var btn = $(this);
+  btn.prop('disabled', true);
+    setTimeout(function(){
+        btn.prop('disabled', false);
+    }, 2500);
   getSimSettings();
    // loadLapData(); 
 });
