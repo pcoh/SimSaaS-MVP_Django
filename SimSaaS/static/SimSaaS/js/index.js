@@ -43,34 +43,40 @@ function buildEventControls(){
 }
 
 function eventSelectorClick(){
-  $(".navbar-collapse").collapse('hide');
-  $('#simButton').button('disable');
-  $('.eventSelector').removeClass('activeEvent')
-  if($(this).attr("class")=='eventSelector'){
+  var clickedEvent = parseInt($(this).attr("id").replace("event",""));
+  if($.inArray(clickedEvent, activeEvents) != -1){ 
+    $(".navbar-collapse").collapse('hide');
+    $('#simButton').button('disable');
+    $('.eventSelector').removeClass('activeEvent')
+    if($(this).attr("class")=='eventSelector'){    
+      currEvent = parseInt($(this).attr("id").replace("event",""));
+    }else if($(this).attr("class")=='liEventSelector'){
+      currEvent = parseInt($(this).attr("id").replace("liEvent",""));
+      $(".navbar-header").children("button").click();
+    }
+    $('#event'+currEvent).addClass('activeEvent');
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Simulation',
+      eventAction: 'Select Event',
+      eventLabel: currEvent
+    }); 
     
-    currEvent = parseInt($(this).attr("id").replace("event",""));
-  }else if($(this).attr("class")=='liEventSelector'){
-    currEvent = parseInt($(this).attr("id").replace("liEvent",""));
-    $(".navbar-header").children("button").click();
-  }
-  $('#event'+currEvent).addClass('activeEvent');
-  ga('send', {
-    hitType: 'event',
-    eventCategory: 'Simulation',
-    eventAction: 'Select Event',
-    eventLabel: currEvent
-  }); 
-  
-  var jobPath = jobsFolder+(currEvent < 10 ? '0'+currEvent : currEvent)+'/'+jobFileName;
-  readJobData(jobPath);
-  sortedLapIDs = sortTable1Contents(sortAxis, sortDir);
-  fillTable1(sortedLapIDs);
-  getLapsToBePlotted();
-  fillTable2();
-  plotData();
+    var jobPath = jobsFolder+(currEvent < 10 ? '0'+currEvent : currEvent)+'/'+jobFileName;
+    readJobData(jobPath);
+    sortedLapIDs = sortTable1Contents(sortAxis, sortDir);
+    fillTable1(sortedLapIDs);
+    getLapsToBePlotted();
+    fillTable2();
+    plotData();
 
-  $('#eventHeadline').html(currEvent + ' - '+ eventList[currEvent-1]);
-  $('#navBarEventHeadline ').html(currEvent + ' - '+ eventList[currEvent-1]);
+    $('#eventHeadline').html(currEvent + ' - '+ eventList[currEvent-1]);
+    $('#navBarEventHeadline ').html(currEvent + ' - '+ eventList[currEvent-1]);
+  }else{
+    $( "#eventNotAvail" )
+      .html("<p>"+eventList[clickedEvent-1]+" is currently inactive. It will become available closer to the date of the race.</p>")
+      .dialog({modal: true});
+  }
 }
 
 function readJobData(jobPath){
@@ -182,7 +188,9 @@ getLapID = function(demTrackGrip, demWingPos, demFuelLoad, demRH_F, demRH_R, dem
   
   if(simData[currEvent].hasOwnProperty('lapData')){
     if(simData[currEvent].lapData.hasOwnProperty(lapID-1)){
-      alert("A lap with these settings has already been simulated");  
+      $( "#alreadySimulated" )
+        .html("<p>A lap with these settings has already been simulated.</p>")
+        .dialog({modal: true});
     }else{
       // sortedLapIDs = addLapToTable1Object(sortedLapIDs,lapID,demTrackGrip, demWingPos, demRH_F, demRH_R, demSS_F, demSS_R, demARBStiff_F, demARBStiff_R);
       sortedLapIDs = addLapToTable1Object(sortedLapIDs,lapID,demTrackGrip, demWingPos, demFuelLoad, demRH_F, demRH_R, demARBStiff_F, demARBStiff_R);

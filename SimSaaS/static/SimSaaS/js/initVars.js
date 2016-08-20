@@ -6,6 +6,7 @@ tableSpaceScroll = false;
 jobsFolder = "../static/SimSaaS/data/";
 jobFileName = "jobOverview.json";
 currEvent = 7;
+activeEvents = [7];
 eventList = ['Catalunya', 'Monaco','Spielberg', 'Silverstone', 'Budapest', 'Hockenheim', 'Spa', 'Monza',  'Austin'];
 //numRowsT1 = 0;
 lapData = [];
