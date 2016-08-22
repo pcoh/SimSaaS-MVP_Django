@@ -43,7 +43,14 @@ function buildEventControls(){
 }
 
 function eventSelectorClick(){
-  var clickedEvent = parseInt($(this).attr("id").replace("event",""));
+  if ($(this).hasClass("liEventSelector")){
+    var clickedEvent = parseInt($(this).attr("id").replace("liEvent",""));
+    $(".navbar-collapse").collapse('hide');
+    $(".navbar-header").children("button").click();
+  }else{
+    var clickedEvent = parseInt($(this).attr("id").replace("event",""));
+
+  }
   if($.inArray(clickedEvent, activeEvents) != -1){ 
     $(".navbar-collapse").collapse('hide');
     $('#simButton').button('disable');
@@ -52,7 +59,7 @@ function eventSelectorClick(){
       currEvent = parseInt($(this).attr("id").replace("event",""));
     }else if($(this).attr("class")=='liEventSelector'){
       currEvent = parseInt($(this).attr("id").replace("liEvent",""));
-      $(".navbar-header").children("button").click();
+      // $(".navbar-header").children("button").click();
     }
     $('#event'+currEvent).addClass('activeEvent');
     ga('send', {
@@ -73,6 +80,7 @@ function eventSelectorClick(){
     $('#eventHeadline').html(currEvent + ' - '+ eventList[currEvent-1]);
     $('#navBarEventHeadline ').html(currEvent + ' - '+ eventList[currEvent-1]);
   }else{
+    
     $( "#eventNotAvail" )
       .html("<p>"+eventList[clickedEvent-1]+" is currently inactive. It will become available closer to the date of the race.</p>")
       .dialog({modal: true});
