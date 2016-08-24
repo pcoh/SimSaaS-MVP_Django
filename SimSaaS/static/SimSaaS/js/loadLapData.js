@@ -19,8 +19,9 @@ function loadLapData(lapID){
 
 
 function createCallback(lapID) {
-	console.log("done");
+	
    	return function(data) {
+   		console.log("done");
     	if(!simData.hasOwnProperty(currEvent)){
 			simData[currEvent]= {};
 		}

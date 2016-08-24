@@ -21,8 +21,9 @@ function secondsTimeSpanToHMSH(s) {
 }
 
 function findFirstNull(obj) {
-    var len = Object.keys(obj).length;
-    for (var i=0; i<len; i++) {
+    // var len = Object.keys(obj).length;
+    var jobLen = jobData_parsed[0].length;
+    for (var i=0; i<jobLen; i++) {
         if (obj[i] !== null && obj[i] !== undefined) {
             return i;
         }
@@ -49,7 +50,6 @@ function eventSelectorClick(){
     $(".navbar-header").children("button").click();
   }else{
     var clickedEvent = parseInt($(this).attr("id").replace("event",""));
-
   }
   if($.inArray(clickedEvent, activeEvents) != -1){ 
     $(".navbar-collapse").collapse('hide');
@@ -406,7 +406,7 @@ function fillTable2(){
 }
 
 calcProgress = function(lapID){
-  var simDur = 1000;
+  var simDur = 20000;
   var endTime = $.now()+simDur; 
   updateProgress(endTime,simDur,lapID);
 }
@@ -418,7 +418,7 @@ function updateProgress(endTime,simDur,lapID) {
     setTimeout(function () {
       //recall the parent function to create a recursive loop.
       updateProgress(endTime,simDur,lapID);
-  }, 3000);
+  }, 500);
   }else{
     // $("#lapRow"+lapID).children(".plotCell").removeClass("loading").on('click',  clickPlotButton);
     // $("#lapRow"+lapID).children(".deleteCell").removeClass("loading").on('click',  clickDeleteButton);
