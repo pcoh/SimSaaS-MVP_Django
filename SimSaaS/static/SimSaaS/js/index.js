@@ -406,7 +406,7 @@ function fillTable2(){
 }
 
 calcProgress = function(lapID){
-  var simDur = 20000;
+  var simDur = 55000;
   var endTime = $.now()+simDur; 
   updateProgress(endTime,simDur,lapID);
 }
@@ -414,7 +414,7 @@ function updateProgress(endTime,simDur,lapID) {
   remainTime = endTime - $.now();
   var progress = Math.min(100,(simDur - remainTime)/simDur *100);
   $("#progress"+lapID).width(progress +"%");
-  if (remainTime >0){      
+  if (remainTime >0 || dlStatus[lapID] != 1){      
     setTimeout(function () {
       //recall the parent function to create a recursive loop.
       updateProgress(endTime,simDur,lapID);

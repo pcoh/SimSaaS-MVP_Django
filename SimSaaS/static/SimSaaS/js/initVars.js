@@ -12,6 +12,7 @@ eventList = ['Oschersleben', 'Hockenheim I','Spielberg', 'Lausitzring', 'Norisri
 //numRowsT1 = 0;
 lapData = [];
 simData = {};
+dlStatus = [];
 
 
 // Plotting:
