@@ -17,6 +17,7 @@ function clickPlotButton(){
 	}else{
 		if (toBePlotted.length <5){
 			simData[currEvent].table1Object[lapID].plotted = true;
+			assignPlotColor(lapID);
 			$(this).addClass('plotted');
 			ga('send', {
 			    hitType: 'event',
@@ -37,6 +38,28 @@ function clickPlotButton(){
       }else{
         $(".plotCell").removeClass("plotFull");
       }
+}
+
+function assignPlotColor(lapID){
+	if (colorOccupation.indexOf(lapID) == -1){
+		firstUnoccupied = colorOccupation.indexOf(0,0);
+		if (firstUnoccupied != -1){
+			simData[currEvent].table1Object[lapID].plotColor = plotColors[firstUnoccupied];
+			colorOccupation[firstUnoccupied] = lapID;
+		}else{
+			// var colorIndices = [];
+			// for (var i = 0; i <= colorOccupation.length; i++) {
+			//    colorIndices.push(i);
+			// }
+			var occupyingButUnused = arrayDiff(colorOccupation, toBePlotted);
+			var toBeEvicted = occupyingButUnused[0]; //id of first lap that has an assigned color but isn't plotted
+			var freedColor = simData[currEvent].table1Object[toBeEvicted].plotColor;
+			simData[currEvent].table1Object[toBeEvicted].plotColor ='';
+			simData[currEvent].table1Object[lapID].plotColor = freedColor;
+			var occupationIndex = plotColors.indexOf(freedColor);
+			colorOccupation[occupationIndex] = lapID;
+		}
+	}
 }
 
 function getLapsToBePlotted(){
@@ -151,7 +174,8 @@ function plotData(){
 				var xPlotRange = [plotObject[plotIDs[i]].minXVal,plotObject[plotIDs[i]].maxXVal];
 				var yPlotRange = setYAxisRange(plotObject[plotIDs[i]].minYVal, plotObject[plotIDs[i]].maxYVal);		
 				for (var j=0; j< toBePlotted.length; j++){
-					var plotColor = plotColors[j];
+					// var plotColor = plotColors[j];
+					var plotColor = simData[currEvent].table1Object[toBePlotted[j]].plotColor; 
 					plotChannel(canvasName,context, plotObject[plotIDs[i]].XData[toBePlotted[j]],plotObject[plotIDs[i]].YData[toBePlotted[j]],xPlotRange[0],xPlotRange[1],yPlotRange[0],yPlotRange[1],plotColor);
 				}
 				var axisLocation = setAxisLocation("X", yPlotRange[0],yPlotRange[1]);

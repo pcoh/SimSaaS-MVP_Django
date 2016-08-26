@@ -17,7 +17,8 @@ dlStatus = [];
 
 // Plotting:
 toBePlotted = [];
-plotColors = ['#08c1fe','#FF4826','#FFB400','#00FE56','#FF8300'];
+plotColors = ['#08c1fe','#FF4826','#FFB400','#00FE56','#ff6c00', '#ff00ff', '#186f2a', '#0000ff', '#be9262', '#eb1350'];
+colorOccupation = [0,0,0,0,0,0,0,0,0,0];
 axisColor = '#FFF';
 tickMarkColor = '#FFF'
 acceptableTickInts = [0.001, 0.005, 0.01, 0.05,0.1,0.25,0.5,1,2,5,10,25,50,100,250,500,1000,2500,5000];

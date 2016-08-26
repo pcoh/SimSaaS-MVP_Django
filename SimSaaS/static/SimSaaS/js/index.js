@@ -30,6 +30,15 @@ function findFirstNull(obj) {
     }
     return null;
 }
+
+
+function arrayDiff(a, b) {
+  return a.filter( 
+    function(el) {
+      return b.indexOf(el) < 0;
+    }
+  );
+}
 //----------------------------------------------------------
 
 function buildEventControls(){
@@ -396,6 +405,7 @@ function fillTable2(){
                         "<span class=\"cell colorCell rightMost\"><div class=\"colorSample\"></div></span></div>";
           $("#rowContainer2").append(lapHTML); 
           $("#plotRow"+currLapID).children(".removeCell").on('click',  clickPlotButton);
+          plotColor = simData[currEvent].table1Object[currLapID].plotColor;
           $("#plotRow"+currLapID).children(".colorCell").children(".colorSample").css({'background-color': plotColors[u]});
           u++;
         }
@@ -406,7 +416,7 @@ function fillTable2(){
 }
 
 calcProgress = function(lapID){
-  var simDur = 55000;
+  var simDur = 500;
   var endTime = $.now()+simDur; 
   updateProgress(endTime,simDur,lapID);
 }
@@ -610,7 +620,8 @@ function reStyleRows(containerSelector, rowSelector){
   }
   if (rowSelector == '.plotRow'){
     for (var i = 0; i<toBePlotted.length; i++){
-        $("#plotRow"+toBePlotted[i]).children(".colorCell").children(".colorSample").css({'background-color': plotColors[i]});    
+      var plotColor = simData[currEvent].table1Object[toBePlotted[i]].plotColor;
+      $("#plotRow"+toBePlotted[i]).children(".colorCell").children(".colorSample").css({'background-color': plotColor});    
     }
   }
 
