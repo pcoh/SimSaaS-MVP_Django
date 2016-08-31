@@ -25,7 +25,8 @@ SECRET_KEY = '3)3w95n_xxv+supm#t7u)s1uf*k!a*x$l!$zv*(nydvg_rf@8b'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-# ALLOWED_HOSTS = ['138.68.1.217'] #Production
+# ALLOWED_HOSTS = ['138.68.1.217'] #Production US
+# ALLOWED_HOSTS = ['46.101.97.140'] #Production FRA
 ALLOWED_HOSTS = ['138.68.2.179'] #Development
 
 
@@ -128,5 +129,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+# STATICFILES_DIRS = [
+#     '/mnt/volume-fra1-01/simdata',
+# ]
 
 

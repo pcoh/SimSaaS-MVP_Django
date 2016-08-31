@@ -107,7 +107,9 @@ function createPlotContainer(plotCount){
 function populatePlot1DD(){
   plotSelectOptions = assemblePlotSelectOptions(plotCount);  
   $("#channelSelectContainer1").html(plotSelectOptions);
-  $( ".channelSelector" ).selectmenu();
+  $(".channelSelector" ).selectmenu();
+  $('#selectChannel_1').val('CHA_Speed');
+  $('#selectChannel_1').selectmenu('refresh');
   $(".channelSelector").on('selectmenuchange',  onChannelSelectorChange);
 }
 

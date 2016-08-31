@@ -78,6 +78,8 @@ $('.addPlot').on('click',  function() {
 	$( plotContHTML ).insertBefore( $(this).parent()).slideDown();
   
   $( ".channelSelector" ).selectmenu();
+  $('#selectChannel_'+ plotCount).val('CHA_Speed');
+  $('#selectChannel_'+ plotCount).selectmenu('refresh');
   
 	addListenerToPlots();	
   $(".channelSelector").on('selectmenuchange',  onChannelSelectorChange);  
