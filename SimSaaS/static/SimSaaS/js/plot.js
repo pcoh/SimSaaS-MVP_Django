@@ -464,8 +464,9 @@ function onCursorCanvasHover(e){
 
 	}
 	
-	for (var i=0; i<cursorVals.length; i++){
-		context.fillStyle = plotColors[i];
+	for (var i=0; i<toBePlotted.length; i++){
+		// context.fillStyle = plotColors[i];
+		context.fillStyle = simData[currEvent].table1Object[toBePlotted[i]].plotColor;
 		context.fillText(cursorVals[i].toPrecision(precision)+"["+units+"]", mousePos.x+xOffset, mousePos.y+ lineHeight*i);
 	}
 }
