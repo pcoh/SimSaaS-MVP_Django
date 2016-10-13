@@ -137,12 +137,20 @@ function plotData(){
 				for (var j=0; j< toBePlotted.length; j++){
 					
 					if (j==0){
-						var yUnit = fullChannelName.substr(fullChannelName.indexOf(" ")+1,fullChannelName.length);
+						if (fullChannelName.indexOf(" ") !=-1){
+							var yUnit = fullChannelName.substr(fullChannelName.indexOf(" ")+1,fullChannelName.length);
+						}else{
+							var yUnit = "";
+						}
 						plotObject[plotIDs[i]].XUnit = xUnit;
 						plotObject[plotIDs[i]].YUnit = yUnit;
 					}
 					
-					plotObject[plotIDs[i]].XData[toBePlotted[j]] = simData[currEvent].lapData[toBePlotted[j]-1]["TRK_Distance m"].slice(0);
+					if(simData[currEvent].lapData[toBePlotted[j]-1].hasOwnProperty("TRK_Distance m")){
+						plotObject[plotIDs[i]].XData[toBePlotted[j]] = simData[currEvent].lapData[toBePlotted[j]-1]["TRK_Distance m"].slice(0);
+					}else{
+						plotObject[plotIDs[i]].XData[toBePlotted[j]] = simData[currEvent].lapData[toBePlotted[j]-1]["Distance m"].slice(0);
+					}
 					plotObject[plotIDs[i]].YData[toBePlotted[j]] = simData[currEvent].lapData[toBePlotted[j]-1][fullChannelName].slice(0);
 					
 					// 	find maximum and minimum values across all laps 

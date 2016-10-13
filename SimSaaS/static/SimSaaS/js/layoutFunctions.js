@@ -8,6 +8,9 @@ $(function() {
     // $( "#selectSpringStiff_Rear" ).selectmenu();
     $( "#selectARBStiff_Front" ).selectmenu();
     $( "#selectARBStiff_Rear" ).selectmenu();
+    $( "#selectTyrePress_Front" ).selectmenu();
+    $( "#selectTyrePress_Rear" ).selectmenu();
+    
     $( ".channelSelector" ).selectmenu(
       {height: 255});
     $( "button" )
@@ -39,10 +42,10 @@ function resizeSelectMenus(){
 }
 
 // function setDDOptions(uniqueGrip,uniqueWingPos,uniqueRH_F,uniqueRH_R,uniqueSS_F,uniqueSS_R,uniqueARB_F,uniqueARB_R){
-function setDDOptions(uniqueGrip,uniqueWingPos,uniqueFuelLoad, uniqueRH_F,uniqueRH_R,uniqueARB_F,uniqueARB_R){
+function setDDOptions(uniqueGrip,uniqueWingPos,uniqueFuelLoad, uniqueRH_F,uniqueRH_R,uniqueARB_F,uniqueARB_R,uniqueTyrePres_F,uniqueTyrePres_R){
   // var controlNames = ["selectTrackGrip", "selectWingPos", "selectRH_Front", "selectRH_Rear", "selectSpringStiff_Front","selectSpringStiff_Rear", "selectARBStiff_Front","selectARBStiff_Rear"];
-  var controlNames = ["selectTrackGrip", "selectWingPos", "selectFuelLoad", "selectRH_Front", "selectRH_Rear", "selectARBStiff_Front","selectARBStiff_Rear"];
-  var controlUnits = ["%", "deg","kg","mm","mm", "N/mm", "N/mm"];
+  var controlNames = ["selectTrackGrip", "selectWingPos", "selectFuelLoad", "selectRH_Front", "selectRH_Rear", "selectARBStiff_Front","selectARBStiff_Rear","selectTyrePress_Front","selectTyrePress_Rear"];
+  var controlUnits = ["%", "deg","kg","mm","mm", "N/mm", "N/mm", "bar", "bar"];
   for(var j = 0; j<arguments.length; j++){
     var optionsAsString = "";
     uniqueValues = arguments[j];
@@ -65,13 +68,27 @@ function cleanAndSortChannelNames(availChannels){
   var channelOptions = availChannels.slice(0); //slice is necessary to create a copy and not just a new referene to the same array;
   var channelCaptions = [];
   for (var i=0; i<channelOptions.length; i++){
-    spaceIndex = channelOptions[i].indexOf(" ");
-    channelCaptions[i] = channelOptions[i].substr(0, spaceIndex);
+    if (channelOptions[i].indexOf(" ") != -1){
+      spaceIndex = channelOptions[i].indexOf(" ");
+      channelCaptions[i] = channelOptions[i].substr(0, spaceIndex);
+    }else{
+      channelCaptions[i] = channelOptions[i];
+    }
   }
-  var index = channelCaptions.indexOf("Time");
+  
+  if(channelCaptions.indexOf("Time") != -1){
+    var index = channelCaptions.indexOf("Time");
+  }else{
+    var index = channelCaptions.indexOf("Lap_Time");
+  }
   channelCaptions.splice(index, 1);
   
-  var index = channelCaptions.indexOf("TRK_Distance");
+
+  if(channelCaptions.indexOf("TRK_Distance") != -1){
+    var index = channelCaptions.indexOf("TRK_Distance");
+  }else{
+    var index = channelCaptions.indexOf("Distance");
+  }
   channelCaptions.splice(index, 1);
   
   channelCaptions = channelCaptions.sort();
@@ -109,6 +126,7 @@ function populatePlot1DD(){
   $("#channelSelectContainer1").html(plotSelectOptions);
   $(".channelSelector" ).selectmenu();
   $('#selectChannel_1').val('CHA_Speed');
+  // $('#selectChannel_'+ plotCount).val('Velocity');
   $('#selectChannel_1').selectmenu('refresh');
   $(".channelSelector").on('selectmenuchange',  onChannelSelectorChange);
 }

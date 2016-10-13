@@ -179,7 +179,7 @@
 	.trackGripHeader{
 		width: 7.82%;
 	}
-	.wingPosHeader, fuelLoadHeader{
+	.wingPosHeader, .fuelLoadHeader{
 		width: 12.85%;
 	}
 	.RHF_Header, .RHR_Header{
@@ -223,7 +223,7 @@
 	.trackGripCell{
 		width: 7.82%;
 	}
-	.wingPosCell, fuelLoadCell{
+	.wingPosCell, .fuelLoadCell{
 		width: 12.85%;
 	}
 	.RHF_Cell, .RHR_Cell{
@@ -297,7 +297,9 @@
 	// }
 }
 
-
+.fuelLoadHeader, .fuelLoadCell,.RHF_Header, .RHF_Cell{
+	display: none;
+}
 
 
 .plotCell,.setCell,.downloadCell,.deleteCell, .removeCell{

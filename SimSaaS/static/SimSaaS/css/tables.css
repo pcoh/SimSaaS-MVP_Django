@@ -113,7 +113,7 @@
   width: 11.80%; }
 #table2 .trackGripHeader {
   width: 7.82%; }
-#table2 .wingPosHeader, #table2 fuelLoadHeader {
+#table2 .wingPosHeader, #table2 .fuelLoadHeader {
   width: 12.85%; }
 #table2 .RHF_Header, #table2 .RHR_Header {
   width: 7.82%; }
@@ -128,7 +128,7 @@
   width: 11.80%; }
 .plotRow .trackGripCell {
   width: 7.82%; }
-.plotRow .wingPosCell, .plotRow fuelLoadCell {
+.plotRow .wingPosCell, .plotRow .fuelLoadCell {
   width: 12.85%; }
 .plotRow .RHF_Cell, .plotRow .RHR_Cell {
   width: 7.82%; }
@@ -167,6 +167,9 @@
 
   .deleteHeader, .deleteCell, .colorHeader, .colorCell {
     width: 8.60% !important; } }
+.fuelLoadHeader, .fuelLoadCell, .RHF_Header, .RHF_Cell {
+  display: none; }
+
 .plotCell, .setCell, .downloadCell, .deleteCell, .removeCell {
   background-size: 20px 20px;
   background-position: center center;
