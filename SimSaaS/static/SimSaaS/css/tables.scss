@@ -101,48 +101,33 @@
 	border-right: none;
 }
 
-// .setHeader, .plotHeader,.setCell, .plotCell{
-// 	width: 3.5%;
-// }
-// .lapTimeHeader, .lapTimeCell{
-// 	width: 10.1%;
-// }
-// .trackGripHeader,.trackGripCell{
-// 	width: 6.7%;
-// }
-// .wingPosHeader, .wingPosCell{
-// 	width: 11%;
-// }
-// .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
-// 	width: 6.7%;
-// }
-// .SSF_Header, .SSR_Header, .ARBF_Header, .ARBR_Header, .downloadHeader, .colorHeader, .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
-// 	width: 	8.8%
-// }
-// .deleteHeader, .deleteCell{
-// 	width: 7.8%;
-// }
 
 .setHeader, .plotHeader,.setCell, .plotCell{
-	width: 3.75%;
+	width: 3.45%;
 }
 .lapTimeHeader, .lapTimeCell{
-	width: 10.81%;
+	width: 9.94%;
 }
 .trackGripHeader,.trackGripCell{
-	width: 7.17%;
+	width: 5.9%;
 }
 .wingPosHeader, .wingPosCell, .fuelLoadHeader, .fuelLoadCell{
-	width: 11.78%;
+	width: 10.83%;
 }
 .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
-	width: 7.17%;
+	width: 6.59%;
 }
-.ARBF_Header, .ARBR_Header, .downloadHeader,.colorHeader, .ARBF_Cell, .ARBR_Cell, .downloadCell, .colorCell{
-	width: 	9.42%
+.ARBF_Header, .ARBR_Header, .colorHeader, .ARBF_Cell, .ARBR_Cell{
+	width: 	8.66%
 }
-.deleteHeader, .deleteCell{
-	width: 8.35%;
+.tyrePresF_Header, .tyrePres_F_Cell, .tyrePresR_Header, .tyrePres_R_Cell{
+ width: 7.7%
+}
+.downloadHeader,.downloadCell{
+	width: 8.62%;
+}
+.deleteHeader, .deleteCell, .colorCell{
+	width: 7.67%;
 }
 
 
@@ -171,69 +156,55 @@
 	// }
 
 	.removeHeader{
-		width: 8.18%;
+		width: 7.46%;
 	}
 	.lapTimeHeader{
-		width: 11.80%;
+		width: 10.76%;
 	}
 	.trackGripHeader{
-		width: 7.82%;
+		width: 6.39%;
 	}
 	.wingPosHeader, .fuelLoadHeader{
-		width: 12.85%;
+		width: 11.72%;
 	}
-	.RHF_Header, .RHR_Header{
-		width: 7.82%;
+	.RHF_Header, .RHR_Header, .tyrePresR_Header{
+		width: 7.13%;
 	}
 	.ARBF_Header, .ARBR_Header, .downloadHeader{
-		width: 	10.28%
+		width: 	9.38%;
+	}
+	.tyrePresF_Header, .tyrePresR_Header{
+		width: 	8.34%;
 	}
 	.colorHeader{
-		width: 10.28%;
+		width: 9.38%;
 	}
 }
 .plotRow{
-	// .removeCell{
-	// 	width: 7.34%;
-	// }
-	// .lapTimeCell{
-	// 	width: 11.07%;
-	// }
-	// .trackGripCell{
-	// 	width: 7.35%;
-	// }
-	// .wingPosCell{
-	// 	width: 12.06%;
-	// }
-	// .RHF_Cell, .RHR_Cell{
-	// 	width: 7.35%;
-	// }
-	// .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
-	// 	width: 	9.65%
-	// }
-	// .colorCell{
-	// 	width: 8.55%;
-	// }
+	
 	.removeCell{
-		width: 8.18%;
+		width: 7.46%;
 	}
 	.lapTimeCell{
-		width: 11.80%;
+		width: 10.76%;
 	}
 	.trackGripCell{
-		width: 7.82%;
+		width: 6.39%;
 	}
 	.wingPosCell, .fuelLoadCell{
-		width: 12.85%;
+		width: 11.72%;
 	}
 	.RHF_Cell, .RHR_Cell{
-		width: 7.82%;
+		width: 7.13%;
 	}
-	.ARBF_Cell, .ARBR_Cell, .downloadCell,.colorCell{
-		width: 	10.28%
+	.ARBF_Cell, .ARBR_Cell{
+		width: 	9.38%;
+	}
+	.tyrePres_F_Cell, .tyrePres_R_Cell{
+		width: 	8.34%;
 	}
 	.colorCell{
-		width: 10.28%;
+		width: 9.38%;
 	}
 }
 
@@ -247,59 +218,37 @@
 	.setHeader, .setCell,.downloadHeader, .downloadCell{
 		display: none;
 	}	
-	// .plotHeader, .plotCell, .removeHeader, removeCell{
-	// 	width: 4% !important;
-	// }
-	// .lapTimeHeader, .lapTimeCell{
-	// 	width: 11.5% !important;
-	// }
-	// .trackGripHeader,.trackGripCell{
-	// 	width: 7.6% !important;
-	// }
-	// .wingPosHeader, .wingPosCell{
-	// 	width: 12.8% !important;
-	// }
-	// .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
-	// 	width: 7.6% !important;
-	// }
-	// .SSF_Header, .SSR_Header, .ARBF_Header, .ARBR_Header, .colorHeader, .SSF_Cell, .SSR_Cell, .ARBF_Cell, .ARBR_Cell, .colorCell{
-	// 	width: 	10% !important;
-	// }
-	// .deleteHeader, .deleteCell, .colorHeader, .colorCell{
-	// 	width: 8.9% !important;
-	// }
-	// .removeHeader,.removeCell{
-	// 	width: 4% !important;
-	// }
+	
 	.plotHeader, .plotCell, .removeHeader, .removeCell{
-		width: 4.32% !important;
+		width: 3.92% !important;
 	}
 	.lapTimeHeader, .lapTimeCell{
-		width: 12.45% !important;
+		width: 11.3% !important;
 	}
 	.trackGripHeader,.trackGripCell{
-		width: 8.26% !important;
+		width: 6.71% !important;
 	}
 	.wingPosHeader, .wingPosCell,.fuelLoadHeader, .fuelLoadCell{
-		width: 13.57% !important;
+		width: 12.32% !important;
 	}
-	.RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell{
-		width: 8.76% !important;
+	.RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell {
+		width: 7.5% !important;
 	}
-	.ARBF_Header, .ARBR_Header, .colorHeader, .ARBF_Cell, .ARBR_Cell, .colorCell{
-		width: 	10.85% !important;
+	.ARBF_Header, .ARBR_Header, .ARBF_Cell, .ARBR_Cell{
+		width: 	9.85% !important;
+	}
+	.tyrePresF_Header, .tyrePres_F_Cell,.tyrePresR_Header, .tyrePres_R_Cell{
+		width: 	8.76% !important;
 	}
 	.deleteHeader, .deleteCell, .colorHeader, .colorCell{
-		width: 8.60% !important;
+		width: 8.71% !important;
 	}
 	// .removeHeader,.removeCell{
 	// 	width: 4.32% !important;
 	// }
 }
 
-.fuelLoadHeader, .fuelLoadCell,.RHF_Header, .RHF_Cell{
-	display: none;
-}
+
 
 
 .plotCell,.setCell,.downloadCell,.deleteCell, .removeCell{
@@ -411,6 +360,11 @@
 }
 .removeCell{
 	background-image: url('../images/PlotIcon_On.png');
+}
+
+
+.RHF_Header, .RHF_Cell,{
+	display: none;
 }
 
 

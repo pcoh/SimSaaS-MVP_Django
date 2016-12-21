@@ -390,7 +390,7 @@ function fillTable1(sortedLapIDs){
 
         var lapHTML = "<div id=\"lapRow"+currLapID+ "\" class=\"lapRow " +rowType + "\"><span class=\"cell setCell\"></span><span id=\"plotCell"+currLapID+ "\" class=\"cell plotCell loading\"></span><span class=\"cell lapTimeCell\"><div class=\"progressBG\"><div class=\"progressVal\" id=\"progress"+currLapID+"\"></div></div></span>"+
                       "<span class=\"cell trackGripCell\">"+simData[currEvent].table1Object[currLapID].demTrackGrip+"%</span><span class=\"cell wingPosCell\">"+simData[currEvent].table1Object[currLapID].demWingPos+"deg</span></span><span class=\"cell fuelLoadCell\">"+simData[currEvent].table1Object[currLapID].demFuelLoad+"kg</span><span class=\"cell RHF_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_F+"mm</span><span class=\"cell RHR_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_R+"mm</span>" +
-                      "<span class=\"cell ARBF_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_F+"N/mm</span><span class=\"cell ARBR_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_R+"N/mm</span><span class=\"cell TyrePres_F_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_F+"bar</span><span class=\"cell TyrePres_R_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_R+"bar</span>" +
+                      "<span class=\"cell ARBF_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_F+"N/mm</span><span class=\"cell ARBR_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_R+"N/mm</span><span class=\"cell tyrePres_F_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_F+"bar</span><span class=\"cell tyrePres_R_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_R+"bar</span>" +
                       "<span class=\"cell downloadCell loading\"></span><span class=\"cell deleteCell loading rightMost\"></span></div>";
 
         $("#rowContainer1").append(lapHTML); 
@@ -430,7 +430,7 @@ function fillTable2(){
 
           var lapHTML = "<div id=\"plotRow"+currLapID+ "\" class=\"plotRow " +rowType + "\"><span id=\"removeCell"+currLapID+ "\" class=\"cell removeCell\"></span><span class=\"cell lapTimeCell\">"+simData[currEvent].table1Object[currLapID].lapTime+"</span>"+
                         "<span class=\"cell trackGripCell\">"+simData[currEvent].table1Object[currLapID].demTrackGrip+"%</span><span class=\"cell wingPosCell\">"+simData[currEvent].table1Object[currLapID].demWingPos+"deg</span><span class=\"cell fuelLoadCell\">"+simData[currEvent].table1Object[currLapID].demFuelLoad+"kg</span><span class=\"cell RHF_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_F+"mm</span><span class=\"cell RHR_Cell\">"+simData[currEvent].table1Object[currLapID].demRH_R+"mm</span>" +
-                        "<span class=\"cell ARBF_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_F+"N/mm</span><span class=\"cell ARBR_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_R+"N/mm</span><span class=\"cell TyrePres_F_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_F+"bar</span><span class=\"cell TyrePres_R_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_R+"bar</span>" +
+                        "<span class=\"cell ARBF_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_F+"N/mm</span><span class=\"cell ARBR_Cell\">"+simData[currEvent].table1Object[currLapID].demARBStiff_R+"N/mm</span><span class=\"cell tyrePres_F_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_F+"bar</span><span class=\"cell tyrePres_R_Cell\">"+simData[currEvent].table1Object[currLapID].demTyrePres_R+"bar</span>" +
                         "<span class=\"cell colorCell rightMost\"><div class=\"colorSample\"></div></span></div>";
           $("#rowContainer2").append(lapHTML); 
           $("#plotRow"+currLapID).children(".removeCell").on('click',  clickPlotButton);
@@ -445,7 +445,7 @@ function fillTable2(){
 }
 
 calcProgress = function(lapID){
-  var simDur = 550;
+  var simDur = 55000;
   var endTime = $.now()+simDur; 
   updateProgress(endTime,simDur,lapID);
 }

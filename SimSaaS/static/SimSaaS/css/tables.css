@@ -87,55 +87,65 @@
   border-right: none; }
 
 .setHeader, .plotHeader, .setCell, .plotCell {
-  width: 3.75%; }
+  width: 3.45%; }
 
 .lapTimeHeader, .lapTimeCell {
-  width: 10.81%; }
+  width: 9.94%; }
 
 .trackGripHeader, .trackGripCell {
-  width: 7.17%; }
+  width: 5.9%; }
 
 .wingPosHeader, .wingPosCell, .fuelLoadHeader, .fuelLoadCell {
-  width: 11.78%; }
+  width: 10.83%; }
 
 .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell {
-  width: 7.17%; }
+  width: 6.59%; }
 
-.ARBF_Header, .ARBR_Header, .downloadHeader, .colorHeader, .ARBF_Cell, .ARBR_Cell, .downloadCell, .colorCell {
-  width: 9.42%; }
+.ARBF_Header, .ARBR_Header, .colorHeader, .ARBF_Cell, .ARBR_Cell {
+  width: 8.66%; }
 
-.deleteHeader, .deleteCell {
-  width: 8.35%; }
+.tyrePresF_Header, .tyrePres_F_Cell, .tyrePresR_Header, .tyrePres_R_Cell {
+  width: 7.7%; }
+
+.downloadHeader, .downloadCell {
+  width: 8.62%; }
+
+.deleteHeader, .deleteCell, .colorCell {
+  width: 7.67%; }
 
 #table2 .removeHeader {
-  width: 8.18%; }
+  width: 7.46%; }
 #table2 .lapTimeHeader {
-  width: 11.80%; }
+  width: 10.76%; }
 #table2 .trackGripHeader {
-  width: 7.82%; }
+  width: 6.39%; }
 #table2 .wingPosHeader, #table2 .fuelLoadHeader {
-  width: 12.85%; }
-#table2 .RHF_Header, #table2 .RHR_Header {
-  width: 7.82%; }
+  width: 11.72%; }
+#table2 .RHF_Header, #table2 .RHR_Header, #table2 .tyrePresR_Header {
+  width: 7.13%; }
 #table2 .ARBF_Header, #table2 .ARBR_Header, #table2 .downloadHeader {
-  width: 10.28%; }
+  width: 9.38%; }
+#table2 .tyrePresF_Header, #table2 .tyrePresR_Header {
+  width: 8.34%; }
 #table2 .colorHeader {
-  width: 10.28%; }
+  width: 9.38%; }
 
 .plotRow .removeCell {
-  width: 8.18%; }
+  width: 7.46%; }
 .plotRow .lapTimeCell {
-  width: 11.80%; }
+  width: 10.76%; }
 .plotRow .trackGripCell {
-  width: 7.82%; }
+  width: 6.39%; }
 .plotRow .wingPosCell, .plotRow .fuelLoadCell {
-  width: 12.85%; }
+  width: 11.72%; }
 .plotRow .RHF_Cell, .plotRow .RHR_Cell {
-  width: 7.82%; }
-.plotRow .ARBF_Cell, .plotRow .ARBR_Cell, .plotRow .downloadCell, .plotRow .colorCell {
-  width: 10.28%; }
+  width: 7.13%; }
+.plotRow .ARBF_Cell, .plotRow .ARBR_Cell {
+  width: 9.38%; }
+.plotRow .tyrePres_F_Cell, .plotRow .tyrePres_R_Cell {
+  width: 8.34%; }
 .plotRow .colorCell {
-  width: 10.28%; }
+  width: 9.38%; }
 
 @media (min-width: 992px) and (max-width: 1199px) {
   #table1 {
@@ -148,28 +158,28 @@
     display: none; }
 
   .plotHeader, .plotCell, .removeHeader, .removeCell {
-    width: 4.32% !important; }
+    width: 3.92% !important; }
 
   .lapTimeHeader, .lapTimeCell {
-    width: 12.45% !important; }
+    width: 11.3% !important; }
 
   .trackGripHeader, .trackGripCell {
-    width: 8.26% !important; }
+    width: 6.71% !important; }
 
   .wingPosHeader, .wingPosCell, .fuelLoadHeader, .fuelLoadCell {
-    width: 13.57% !important; }
+    width: 12.32% !important; }
 
   .RHF_Header, .RHF_Cell, .RHR_Header, .RHR_Cell {
+    width: 7.5% !important; }
+
+  .ARBF_Header, .ARBR_Header, .ARBF_Cell, .ARBR_Cell {
+    width: 9.85% !important; }
+
+  .tyrePresF_Header, .tyrePres_F_Cell, .tyrePresR_Header, .tyrePres_R_Cell {
     width: 8.76% !important; }
 
-  .ARBF_Header, .ARBR_Header, .colorHeader, .ARBF_Cell, .ARBR_Cell, .colorCell {
-    width: 10.85% !important; }
-
   .deleteHeader, .deleteCell, .colorHeader, .colorCell {
-    width: 8.60% !important; } }
-.fuelLoadHeader, .fuelLoadCell, .RHF_Header, .RHF_Cell {
-  display: none; }
-
+    width: 8.71% !important; } }
 .plotCell, .setCell, .downloadCell, .deleteCell, .removeCell {
   background-size: 20px 20px;
   background-position: center center;
@@ -264,5 +274,8 @@
 
 .removeCell {
   background-image: url("../images/PlotIcon_On.png"); }
+
+.RHF_Header, .RHF_Cell {
+  display: none; }
 
 /*# sourceMappingURL=tables.css.map */
