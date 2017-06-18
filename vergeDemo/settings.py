@@ -23,11 +23,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '3)3w95n_xxv+supm#t7u)s1uf*k!a*x$l!$zv*(nydvg_rf@8b'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 # ALLOWED_HOSTS = ['138.68.1.217'] #Production US
-ALLOWED_HOSTS = ['46.101.155.229'] #Production FRA
+# ALLOWED_HOSTS = ['46.101.155.229'] #Production FRA
 # ALLOWED_HOSTS = ['138.68.2.179'] #Development
+ALLOWED_HOSTS = ['127.0.0.1'] #localhost
 
 
 # Application definition
@@ -40,6 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sass_processor',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'vergeDemo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['./templates',],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,12 +80,12 @@ WSGI_APPLICATION = 'vergeDemo.wsgi.application'
 
 DATABASES = {
     'default': {
-       # 'ENGINE': 'django.db.backends.sqlite3',
-       # 'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-       'ENGINE': 'django.db.backends.postgresql_psycopg2',
-       'NAME': 'vergedb',
-       'USER': 'dbuser',
-       'PASSWORD': 'waffles',
+       'ENGINE': 'django.db.backends.sqlite3',
+       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+       # 'ENGINE': 'django.db.backends.postgresql_psycopg2',
+       # 'NAME': 'vergedb',
+       # 'USER': 'dbuser',
+       # 'PASSWORD': 'waffles',
        'HOST': 'localhost',
        'PORT': '',
     }
@@ -131,7 +133,23 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 STATICFILES_DIRS = [
+    # os.path.join(BASE_DIR, "static"),
     '/mnt/volume-fra1-06/simdata',
 ]
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/simulate/'
+LOGOUT_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'sass_processor.finders.CssFinder',
+]
+
+SASS_PROCESSOR_ENABLED = True
 
 
