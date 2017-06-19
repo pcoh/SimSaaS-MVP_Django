@@ -1,25 +1,55 @@
 
 
-<div class="container">
+
   <form id="loginForm" class="form-horizontal" method="post" action="{% url 'login' %}">
     {% csrf_token %}
-    <h3>Login</h3>
+    <!-- <h3>Login</h3> -->
     <div class="form-group">
-      {{ auth_form.username.errors }}
-      <label for="id_username" class="control-label loginFormLabel"></label><input id="id_username" class="loginFormField form-control" type="text" name="username" maxlength="30" placeholder="Username"/>
+      <div class="col-sm-offset-1 col-sm-10">
+        <p class="loginHeader">Login</p>
+      </div>
     </div>
 
 
-    {{ auth_form.password.errors }}
-    <p><label for="id_password" class="control-label loginFormLabel"></label> <input type="password" name="password" id="id_password" class="loginFormField form-control"/placeholder="Password"></p>
-
-    <input type="submit" class="loginButton" value="Log in" />
+    <div class="form-group">
+      {{ auth_form.username.errors }}
+      <!-- <label for="id_username" class="loginFormLabel control-label col-sm-2">User</label> -->
+      <div class="col-sm-offset-1 col-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon userLabel glyphicon glyphicon-user"></span>
+          <input id="id_username" class="loginFormField form-control" type="text" name="username" maxlength="30" placeholder="Username" autofocus="autofocus"/>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-group">
+      {{ auth_form.password.errors }}
+      <!-- <label for="id_password" class="loginFormLabel control-label col-sm-2">Password</label>  -->
+      <div class="col-sm-offset-1 col-sm-10">
+        <div class="input-group">
+          <span class="input-group-addon pwdLabel glyphicon glyphicon-lock"></span>
+          <input type="password" name="password" id="id_password" class="loginFormField form-control"/placeholder="Password">
+        </div>
+      </div>
+    </div>
+      
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-10">
+        <input type="submit" class="btn btn-default loginButton" value="ENTER" />
+      </div
+    </div>
     <input type="hidden" name="next" value="" />
-  </form> 
-  {% if form.errors %}
-  <p>Your username and password didn't match. Please try again.</p>
-  {% endif %}
+    </div>
 
-  {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
-</div>
+
+    {% if form.errors %}
+      <div class="form-group">
+        <div class="col-sm-offset-1 col-sm-10">
+          <p class="formError">Your username and password didn't match. Please try again.</p>
+          {# Assumes the password_reset view in my URLconf is set up #}
+          <p><a class="forgotPWDLink" href="{% url 'password_reset' %}">Forgot password?</a></p>
+        </div
+      </div>
+    {% endif %}
+  </form> 
+  
