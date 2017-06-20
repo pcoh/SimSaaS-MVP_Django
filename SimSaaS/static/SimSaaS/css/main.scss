@@ -502,7 +502,7 @@ body {
   border: 3px solid #eee;
 }
 
-#loginForm{
+#loginForm, #resetForm, #resetConfirmForm, #resetSentDiv, #resetCompleteDiv{
   background-color: $accent-color;
   margin-top: 250px;
   margin-left: 30px;
@@ -511,13 +511,19 @@ body {
   padding-bottom: 25px;
   position: relative;
   z-index:2;
-
 }
+
+#resetSentDiv, #resetCompleteDiv{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
 .loginHeader{
   color: #FFF;
   font-size: 1.2em
 }
-.formError{
+.formError, .errorlist > li{
   color: #CC0035;
 }
 a.forgotPWDLink{
@@ -542,4 +548,8 @@ html, body {
   height: 100%;
 }
 
+
+.centered{
+  text-align: center;
+}
 

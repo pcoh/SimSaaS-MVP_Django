@@ -152,4 +152,6 @@ STATICFILES_FINDERS = [
 
 SASS_PROCESSOR_ENABLED = True
 
-# AUTH_PROFILE_MODULE = "SimSaaS.Profile"
+
+MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+MEDIA_URL          = '/media/'

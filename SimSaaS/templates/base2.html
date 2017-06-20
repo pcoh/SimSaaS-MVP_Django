@@ -14,14 +14,19 @@
     	</div>
     	<div class="col-md-4">
     		    		
-    		<p>Logged out!</p>  
-
-			<a href="{% url 'login'%}">Click here to login again.</a>
-
-			
+    		{% block singleForm %}{% endblock %}
 
 		</div>
 		<div class="col-md-4">
     	</div>
 	</div>
 </div>
+
+
+
+
+{% endblock %}
+
+
+
+

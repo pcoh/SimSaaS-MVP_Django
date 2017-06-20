@@ -11,8 +11,8 @@ from django.contrib.auth.models import User
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('eventName', 'eventType', 'date', 'league')
-    fields = ['eventName', 'eventType', 'date', 'league']
+    list_display = ('eventName','league', 'eventType', 'date', 'trackImage_On','trackImage_Off' )
+    fields = ['eventName', 'league', 'eventType', 'date', 'trackImage_On', 'trackImage_Off']
     
 
 # Register the Event class with the associated model
@@ -44,7 +44,6 @@ class UsersInLine(admin.TabularInline):
 class LeagueAdmin(admin.ModelAdmin):
     list_display = ('league_name',)
     fields = ['league_name',]
-    # inlines = [EventsInLine, UserInLine]
     inlines = [EventsInLine, UsersInLine]
 
 # Register the Event class with the associated model

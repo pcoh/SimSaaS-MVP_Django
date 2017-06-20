@@ -43,8 +43,8 @@ function arrayDiff(a, b) {
 
 function buildEventControls(){
   for (var i=0; i<eventList.length; i++){
-    var eventHTML = "<div class=\"eventSelector\" id=\"event"+(i+1)+"\">Round "+(i+1)+"<div class=\"divtrackName hidden-sm \">"+eventList[i]+"</div></div>"
-    $("#divTrackContainer").append(eventHTML);
+    // var eventHTML = "<div class=\"eventSelector\" id=\"event"+(i+1)+"\">Round "+(i+1)+"<div class=\"divtrackName hidden-sm \">"+eventList[i]+"</div></div>"
+    // $("#divTrackContainer").append(eventHTML);
     var eventMenuHTML = "<li class=\"liEventSelector\" id=\"liEvent"+(i+1)+"\"><a href=\"#\">Round "+ (i+1)+" - "+eventList[i]+"</a></li>";
     $("#ulEventsList").append(eventMenuHTML);
   }

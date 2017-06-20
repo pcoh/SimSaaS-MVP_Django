@@ -24,10 +24,19 @@ class Event(models.Model):
         default=RACE,
     )
     date = models.DateField(null=True, blank=True)
+    # trackImage_On= models.FileField(upload_to='trackImages/',default='settings.MEDIA_ROOT/trackImages/AddPlot_hover.png')
+    # trackImage_Off = models.FileField(upload_to='trackImages/',default='settings.MEDIA_ROOT/trackImages/AddPlot_hover.png')
+
+    trackImage_On= models.FileField(upload_to='trackImages/',default='trackImages/AddPlot_hover.png')
+    trackImage_Off = models.FileField(upload_to='trackImages/',default='trackImages/AddPlot_hover.png')
+
 
     league = models.ForeignKey('League', on_delete=models.SET_NULL, null=True)
     # Foreign Key used because Event can only have one league, but leagues can have multiple events
+
     
+    class Meta:
+        ordering = ["date"]
     
     def __str__(self):
         """
@@ -67,27 +76,7 @@ class League(models.Model):
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # league = models.OneToOneField(League, on_delete=models.CASCADE)
     league = models.ForeignKey('League', on_delete=models.SET_NULL, null=True)
-    # department = models.CharField(max_length=100)
-
-
-# class Profile(models.Model):
-#     # user = models.OneToOneField(User,unique=True, on_delete=models.CASCADE)
-#     user = models.ForeignKey(User)
-#     # league = models.ForeignKey('League', on_delete=models.SET_NULL, null=True)
-#     location = models.CharField(max_length=30, null=True)
-
-
-
-# @receiver(post_save, sender=User)
-# def create_user_profile(sender, instance, created, **kwargs):
-#     if created:
-#         Profile.objects.create(user=instance)
-
-# @receiver(post_save, sender=User)
-# def save_user_profile(sender, instance, **kwargs):
-#     instance.profile.save()
-
+ 
 
 

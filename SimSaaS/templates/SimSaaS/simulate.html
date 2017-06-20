@@ -6,6 +6,13 @@
 <div class="container-fluid">
   <div class="row">          
     <div class="hidden-xs hidden-sm hidden-md col-lg-1 scroll-pane" id="divTrackContainer">
+
+      {% for event in user.profile.league.event_set.all %}
+        <div class="eventSelector" id="event{{ forloop.counter }}">Round {{ forloop.counter }}
+          <div class="divtrackName hidden-sm ">{{event.eventName}}</div>
+        </div>
+      {% endfor %}
+
     </div>
     <nav class="navbar  col-sm-12 col-md-12 hidden-lg" id="navTrackNavBar">            
       <!-- Brand and toggle get grouped for better mobile display -->
@@ -17,6 +24,7 @@
             <span class="icon-bar"></span>
           </button>
         </div> 
+
         <div class="col-xs-7"id="navBarEventHeadline">Round 1 - Catalunya</div>
       <div class="col-xs-3" id="navBarDivLogoContainer"><div id="logo2"></div></div>               
       </div>
@@ -28,6 +36,7 @@
     </nav>
     <div class="hidden-xs hidden-sm hidden-md col-lg-11" id="divEventBanner">
       <div class="col-sm-4 col-xs-0" id="divLogoContainer"><div id="logo"></div></div>
+      
       <div class="col-sm-6 col-xs-8 eventHeadline"id="eventHeadline">Round 1 - Catalunya</div>   
 
       <div class="col-sm-2 col-xs-4" id="divLogoutContainer"><a href="{% url 'logout'%}" ><span class="glyphicon glyphicon-off eventHeadline logoutSymbol"></span><span class="logoutLink">Logout</span></a></div>
