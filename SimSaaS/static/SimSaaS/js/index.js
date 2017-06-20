@@ -63,14 +63,26 @@ function eventSelectorClick(){
   if($.inArray(clickedEvent, activeEvents) != -1){ 
     $(".navbar-collapse").collapse('hide');
     $('#simButton').button('disable');
-    $('.eventSelector').removeClass('activeEvent')
+    
+    // $('.eventSelector').removeClass('activeEvent')
+
+    // swap out background image for all events (to inactive)
+    for (var i=1; i<numLeageEvents+1; i++){
+      eval("currURLVar = \"track\"+i+\"_Image_On\"")
+      $('#event'+i).css('background-image','url('+eval(eval("currURLVar = \"track\"+i+\"_Image_Off\""))+')');
+    }
+    
     if($(this).attr("class")=='eventSelector'){    
       currEvent = parseInt($(this).attr("id").replace("event",""));
     }else if($(this).attr("class")=='liEventSelector'){
       currEvent = parseInt($(this).attr("id").replace("liEvent",""));
-      // $(".navbar-header").children("button").click();
     }
-    $('#event'+currEvent).addClass('activeEvent');
+    // $('#event'+currEvent).addClass('activeEvent');
+
+    // swap out background image for active event:
+    eval("currURLVar = \"track\"+currEvent+\"_Image_On\"")
+    $('#event'+currEvent).css('background-image','url('+eval(eval("currURLVar = \"track\"+currEvent+\"_Image_On\""))+')');
+    
     ga('send', {
       hitType: 'event',
       eventCategory: 'Simulation',
@@ -78,7 +90,8 @@ function eventSelectorClick(){
       eventLabel: currEvent
     }); 
     
-    var jobPath = jobsFolder+(currEvent < 10 ? '0'+currEvent : currEvent)+'/'+jobFileName;
+    // var jobPath = jobsFolder+(currEvent < 10 ? '0'+currEvent : currEvent)+'/'+jobFileName;
+    var jobPath  = jobFileUrls[currEvent - 1];
     readJobData(jobPath);
     sortedLapIDs = sortTable1Contents(sortAxis, sortDir);
     fillTable1(sortedLapIDs);

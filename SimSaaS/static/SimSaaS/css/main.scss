@@ -50,61 +50,66 @@ body {
   padding-right: 0px;
   padding-left: 5px;
 }
-#event1{
-  // background-image: url('../images/Events/Catalunya_Off.png');
-  background-image: url(#{$track-path}/#{$track1}_Off.png); 
-}
-#event1.activeEvent{
-  background-image: url(#{$track-path}/#{$track1}_On.png);
-}
-#event2{
-  background-image: url(#{$track-path}/#{$track2}_Off.png);
-}
-#event2.activeEvent{
-  background-image: url(#{$track-path}/#{$track2}_On.png);
-}
-#event3{
-  background-image: url(#{$track-path}/#{$track3}_Off.png);
-}
-#event3.activeEvent{
-  background-image: url(#{$track-path}/#{$track3}_On.png);
-}
-#event4{
-  background-image: url(#{$track-path}/#{$track4}_Off.png);
-}
-#event4.activeEvent{
-  background-image: url(#{$track-path}/#{$track4}_On.png);
-}
-#event5{
-  background-image:url(#{$track-path}/#{$track5}_Off.png);
-}
-#event5.activeEvent{
-  background-image: url(#{$track-path}/#{$track5}_On.png);
-}
-#event6{
-  background-image: url(#{$track-path}/#{$track6}_Off.png);
-}
-#event6.activeEvent{
-  background-image: url(#{$track-path}/#{$track6}_On.png);
-}
-#event7{
-  background-image: url(#{$track-path}/#{$track7}_Off.png);
-}
-#event7.activeEvent{
-  background-image: url(#{$track-path}/#{$track7}_On.png);
-}
-#event8{
-  background-image: url(#{$track-path}/#{$track8}_Off.png);
-}
-#event8.activeEvent{
-  background-image: url(#{$track-path}/#{$track8}_On.png);
-}
-#event9{
-  background-image: url(#{$track-path}/#{$track9}_Off.png);
-}
-#event9.activeEvent{
-  background-image: url(#{$track-path}/#{$track9}_On.png);
-}
+
+
+
+
+// #event1{
+//   // background-image: url('../images/Events/Catalunya_Off.png');
+//   background-image: url(#{$track-path}/#{$track1}_Off.png); 
+// }
+
+// #event1.activeEvent{
+//   background-image: url(#{$track-path}/#{$track1}_On.png);
+// }
+// #event2{
+//   background-image: url(#{$track-path}/#{$track2}_Off.png);
+// }
+// #event2.activeEvent{
+//   background-image: url(#{$track-path}/#{$track2}_On.png);
+// }
+// #event3{
+//   background-image: url(#{$track-path}/#{$track3}_Off.png);
+// }
+// #event3.activeEvent{
+//   background-image: url(#{$track-path}/#{$track3}_On.png);
+// }
+// #event4{
+//   background-image: url(#{$track-path}/#{$track4}_Off.png);
+// }
+// #event4.activeEvent{
+//   background-image: url(#{$track-path}/#{$track4}_On.png);
+// }
+// #event5{
+//   background-image:url(#{$track-path}/#{$track5}_Off.png);
+// }
+// #event5.activeEvent{
+//   background-image: url(#{$track-path}/#{$track5}_On.png);
+// }
+// #event6{
+//   background-image: url(#{$track-path}/#{$track6}_Off.png);
+// }
+// #event6.activeEvent{
+//   background-image: url(#{$track-path}/#{$track6}_On.png);
+// }
+// #event7{
+//   background-image: url(#{$track-path}/#{$track7}_Off.png);
+// }
+// #event7.activeEvent{
+//   background-image: url(#{$track-path}/#{$track7}_On.png);
+// }
+// #event8{
+//   background-image: url(#{$track-path}/#{$track8}_Off.png);
+// }
+// #event8.activeEvent{
+//   background-image: url(#{$track-path}/#{$track8}_On.png);
+// }
+// #event9{
+//   background-image: url(#{$track-path}/#{$track9}_Off.png);
+// }
+// #event9.activeEvent{
+//   background-image: url(#{$track-path}/#{$track9}_On.png);
+// }
 .eventSelector{
   height: 120px;
   color: $font-color;

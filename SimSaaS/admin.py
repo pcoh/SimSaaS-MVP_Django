@@ -11,8 +11,8 @@ from django.contrib.auth.models import User
 
 
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('eventName','league', 'eventType', 'date', 'trackImage_On','trackImage_Off' )
-    fields = ['eventName', 'league', 'eventType', 'date', 'trackImage_On', 'trackImage_Off']
+    list_display = ('eventName','league', 'eventType', 'date', 'trackImage_On','trackImage_Off','jobOverviewFile' )
+    fields = ['eventName', 'league', 'eventType', 'date', 'trackImage_On', 'trackImage_Off', 'jobOverviewFile']
     
 
 # Register the Event class with the associated model

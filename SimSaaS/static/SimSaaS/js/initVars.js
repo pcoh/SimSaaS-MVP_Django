@@ -1,18 +1,15 @@
 //initialize variables
 plotCount = 1;
-firstLapSim = [true,true,true,true,true,true,true,true];
+// firstLapSim = [true,true,true,true,true,true,true,true];
 stdPlotOpcacity = $(".divPlotContainer").css("opacity");
 dragPlotOpacity = '0.4';
 tableSpaceScroll = false;
-jobsFolder = "../static/SimSaaS/data/"; //Development
+// jobsFolder = "../static/SimSaaS/data/"; //Development
 // jobsFolder = "../../static/data/";	//Production 
-jobFileName = "jobOverview.json";
+// jobFileName = "jobOverview.json";
 currEvent = 8;
-activeEvents = [8];
-// eventList = ['Catalunya', 'Monaco','Spielberg', 'Silverstone', 'Budapest', 'Hockenheim', 'Spa', 'Monza',  'Austin'];
-// firstLapSim = [true,true,true,true,true,true,true,true,true];
-eventList = ['Oschersleben', 'Hockenheim I','Spielberg', 'Lausitzring', 'Norisring', 'Zandvoort','Nürburgring', 'Hockenheim II'];
-firstLapSim = [true,true,true,true,true,true,true,true];
+activeEvents = [7,8];
+
 //numRowsT1 = 0;
 lapData = [];
 simData = {};
@@ -39,6 +36,5 @@ var initialSort = 1;
 // var sortDirVector_default = [1,1,1,1,1,1,1,1,1];
 var sortDirVector_default = [1,1,1,1,1,1,1,1,1,1];
 var lastSorted;
-// var axesVector = ["Lap-time", "Grip", "Wing Pos.", "RH F", "RH R", "SS F", "SS R", "ARB F", "ARB R"];
 var axesVector = ["Lap-time", "Grip", "Wing Pos.", "Fuel Load","RH F", "RH R", "ARB F", "ARB R","Press F","Press R"];
 

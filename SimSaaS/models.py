@@ -29,6 +29,9 @@ class Event(models.Model):
 
     trackImage_On= models.FileField(upload_to='trackImages/',default='trackImages/AddPlot_hover.png')
     trackImage_Off = models.FileField(upload_to='trackImages/',default='trackImages/AddPlot_hover.png')
+    # jobOverviewFile = models.FileField(upload_to='jobOverviews/',default='jobOverviews/jobOverview.json')
+
+    jobOverviewFile = models.FileField(upload_to='jobOverviews/')
 
 
     league = models.ForeignKey('League', on_delete=models.SET_NULL, null=True)

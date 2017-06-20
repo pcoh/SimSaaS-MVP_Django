@@ -8,7 +8,7 @@
     <div class="hidden-xs hidden-sm hidden-md col-lg-1 scroll-pane" id="divTrackContainer">
 
       {% for event in user.profile.league.event_set.all %}
-        <div class="eventSelector" id="event{{ forloop.counter }}">Round {{ forloop.counter }}
+        <div class="eventSelector" id="event{{ forloop.counter }}" style="background-image: url({{event.trackImage_Off.url}});">Round {{ forloop.counter }}
           <div class="divtrackName hidden-sm ">{{event.eventName}}</div>
         </div>
       {% endfor %}
@@ -266,6 +266,23 @@
 </div>
 <div id="alreadySimulated" title="Lap already exists">
 </div>
+
+<script>
+eventList = [];
+firstLapSim = [];
+jobFileUrls = [];
+
+{% for event in user.profile.league.event_set.all %}
+  eventList.push('{{event.eventName}}')
+  firstLapSim.push(true)
+  jobFileUrls.push('{{event.jobOverviewFile.url}}')
+
+  track{{forloop.counter}}_Image_On = '{{event.trackImage_On.url}}';
+  track{{forloop.counter}}_Image_Off = '{{event.trackImage_Off.url}}';
+{% endfor %}
+numLeageEvents = {{user.profile.league.event_set.all.count}};
+
+</script>
 
 {% load static %}
 <script src="{% static 'SimSaaS/js/initVars.js' %}"></script>

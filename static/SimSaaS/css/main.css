@@ -35,60 +35,6 @@ body {
   padding-right: 0px;
   padding-left: 5px; }
 
-#event1 {
-  background-image: url(../images/Events/Oschersleben_Off.png); }
-
-#event1.activeEvent {
-  background-image: url(../images/Events/Oschersleben_On.png); }
-
-#event2 {
-  background-image: url(../images/Events/Hockenheim_Off.png); }
-
-#event2.activeEvent {
-  background-image: url(../images/Events/Hockenheim_On.png); }
-
-#event3 {
-  background-image: url(../images/Events/Spielberg_Off.png); }
-
-#event3.activeEvent {
-  background-image: url(../images/Events/Spielberg_On.png); }
-
-#event4 {
-  background-image: url(../images/Events/Lausitzring_Off.png); }
-
-#event4.activeEvent {
-  background-image: url(../images/Events/Lausitzring_On.png); }
-
-#event5 {
-  background-image: url(../images/Events/Norisring_Off.png); }
-
-#event5.activeEvent {
-  background-image: url(../images/Events/Norisring_On.png); }
-
-#event6 {
-  background-image: url(../images/Events/Zandvoort_Off.png); }
-
-#event6.activeEvent {
-  background-image: url(../images/Events/Zandvoort_On.png); }
-
-#event7 {
-  background-image: url(../images/Events/Nuerburgring_Off.png); }
-
-#event7.activeEvent {
-  background-image: url(../images/Events/Nuerburgring_On.png); }
-
-#event8 {
-  background-image: url(../images/Events/Hockenheim_Off.png); }
-
-#event8.activeEvent {
-  background-image: url(../images/Events/Hockenheim_On.png); }
-
-#event9 {
-  background-image: url(../images/Events/_Off.png); }
-
-#event9.activeEvent {
-  background-image: url(../images/Events/_On.png); }
-
 .eventSelector {
   height: 120px;
   color: #dfdfdf;
